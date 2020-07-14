@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="js/jquery-3.3.1.js"></script>
+		<link rel="shortcut icon" href="img/touxiang.jpg">
+		<script src="js/MusicBox.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/MusicStyle.css" />
+		<title>我的音乐盒</title>
+	</head>
+	<body>
+		<audio src="mp3/1269748630.mp3" id="myaudio"></audio>
+		<div class="ShowMusic">
+			<div class="YuanPan" id="Xuanzhuan">
+				<center>
+					<img src="img/yinfu.gif">
+				</center>
+			</div>
+			<div class="Zimu">
+				<div class="song_info__info">
+					<!-- 字幕上方介绍-->
+					<a href="" class="song_info__cover">
+						<img src="img/最长的电影.jpg">
+					</a>
+					<div style="margin-top: 10px;">
+						歌曲名：<a target="_blank" href="https://baike.baidu.com/item/%E6%9C%80%E9%95%BF%E7%9A%84%E7%94%B5%E5%BD%B1/8881628?fr=aladdin">
+							最长的电影
+						</a>
+					</div>
+					<div class="song_info__singer">
+						歌手名：
+						<a target="_blank" href="https://baike.baidu.com/item/%E5%91%A8%E6%9D%B0%E4%BC%A6/129156?fr=aladdin">
+							周杰伦
+						</a>
+					</div>
+					<div class="song_info__album">
+						专辑名：
+						<a target="_blank" href="https://baike.baidu.com/item/%E6%88%91%E5%BE%88%E5%BF%99/1374653?fr=aladdin">
+							《我很忙》 & 2007-11-02
+						</a>
+					</div>
+					<!-- 字幕上方介绍-->
+				</div>
+				<div class="zezao">
+					<!-- 歌词 -->
+					<div class="faded-text" id="Huad">
+						<p>最长的电影 (The Longest Movie) - 周杰伦 (Jay Chou)</p>
+						<p>词：周杰伦</p>
+						<p>曲：周杰伦</p>
+						<p>编曲：钟兴民</p>
+						<p>制作人：周杰伦</p>
+						<p>我们的开始</p>
+						<p>是很长的电影</p>
+						<p>放映了三年</p>
+						<p>我票都还留着</p>
+						<p>冰上的芭蕾</p>
+						<p>脑海中还在旋转</p>
+						<p>望着你 慢慢忘记你</p>
+						<p>朦胧的时间</p>
+						<p>我们溜了多远</p>
+						<p>冰刀划的圈</p>
+						<p>圈起了谁改变</p>
+						<p>如果再重来</p>
+						<p>会不会稍嫌狼狈</p>
+						<p>爱是不是不开口才珍贵</p>
+						<p>再给我两分钟</p>
+						<p>让我把记忆结成冰</p>
+						<p>别融化了眼泪</p>
+						<p>你妆都花了要我怎么记得</p>
+						<p>记得你叫我忘了吧</p>
+						<p>记得你叫我忘了吧</p>
+						<p>你说你会哭</p>
+						<p>不是因为在乎</p>
+						<p>[纯音乐]</p>
+						<p>[纯音乐]</p>
+						<p>[纯音乐]</p>
+						<p>朦胧的时间</p>
+						<p>我们溜了多远</p>
+						<p>冰刀划的圈</p>
+						<p>圈起了谁改变</p>
+						<p>如果再重来</p>
+						<p>会不会稍嫌狼狈</p>
+						<p>爱是不是不开口才珍贵</p>
+						<p>再给我两分钟</p>
+						<p>让我把记忆结成冰</p>
+						<p>别融化了眼泪</p>
+						<p>你妆都花了要我怎么记得</p>
+						<p>记得你叫我忘了吧</p>
+						<p>记得你叫我忘了吧</p>
+						<p>你说你会哭</p>
+						<p>不是因为在乎</p>
+						<p>再给我两分钟</p>
+						<p>让我把记忆结成冰</p>
+						<p>别融化了眼泪</p>
+						<p>你妆都花了要我怎么记得</p>
+						<p>记得你叫我忘了吧</p>
+						<p>记得你叫我忘了吧</p>
+						<p>你说你会哭</p>
+						<p>不是因为在乎</p>
+					</div>
+					<!-- 歌词 -->
+				</div>
+			</div>
+		</div>
+		<div class="Control">
+			<!-- 上一首 -->
+			<a href="javascript::" class="Music_prev zujian"></a>
+			<!-- 上一首 -->
+			<!-- 播放/暂停 -->
+			<a href="javascript::" class="Music_play zujian" id="player"></a>
+			<!-- 播放/暂停 -->
+			<!-- 下一首 -->
+			<a href="javascript::" class="Music_next zujian"></a>
+			<!-- 下一首 -->
+			<!-- 进度条区域 -->
+			<div class="player_music">
+				<!-- 歌名+歌手 -->
+				<div class="player_music__info">
+					<a href="">最长的电影 - 周杰伦</a>
+				</div>
+				<!-- 播放时间 -->
+				<div class="player_music__time">00:00 / 03:55</div>
+				<!-- 进度条 -->
+				<div class="player_progress">
+					<div class="player_progress__inner">
+						<div class="player_progress__load"></div>
+						<div class="player_progress__play" id="Jindu">
+							<i class="player_progress__dot zujian"></i>
+						</div>
+						<div class="btn_big_style_list">
+						</div>
+					</div>
+				</div>
+				<!-- 进度条 -->
+			</div>
+			<!-- 进度条区域 -->
+			<!-- 喜欢 -->
+			<a href="javascript::" class="Music_like zujian"></a>
+			<!-- 喜欢 -->
+			<!-- 下载 -->
+			<a href="javascript::" class="Music_down zujian"></a>
+			<!-- 下载 -->
+			<!-- 评论 -->
+			<a href="javascript::" class="Music_comment zujian"></a>
+			<!-- 评论 -->
+		</div>
+		<!-- <nav></nav> -->
+		<div class="Daohang">
+			<!-- 右侧导航栏 -->
+			<ul>
+				
+				<li class="ion-songList">
+					<!-- 歌曲列表 钮 -->
+					<a href="#"></a>
+					<div class="songList">
+						<!-- 弹出歌曲列表 -->
+						<ul class="songlist__header">
+							<!-- 列表头行 -->
+							<li class="songlist__name">歌曲</li>
+							<li class="songlist__author">歌手</li>
+							<li class="songlist__time">时长</li>
+							<!-- 列表头行 -->
+						</ul>
+						<!-- 分割线 -->
+						<i class="horizontally_line"></i>
+						<i class="vertical_line" style="left: 40%;"></i>
+						<i class="vertical_line" style="left: 70%;"></i>
+						<!-- 分割线 -->
+						<ul class="songlist__list"> 
+							<!-- 列表内容 -->
+							<li>
+								<div class="songlist__name">晴天</div>
+								<div class="songlist__author">周杰伦</div>
+								<div class="songlist__time">04:29</div>
+							</li>
+							<li>
+								<div class="songlist__name">Mojito</div>
+								<div class="songlist__author">周杰伦</div>
+								<div class="songlist__time">03:05</div>
+							</li>
+							<li>
+								<div class="songlist__name">稻香</div>
+								<div class="songlist__author">周杰伦</div>
+								<div class="songlist__time">03:43</div>
+							</li>
+							<li>
+								<div class="songlist__name">七里香</div>
+								<div class="songlist__author">周杰伦</div>
+								<div class="songlist__time">04:59</div>
+							</li>
+							<li>
+								<div class="songlist__name">搁浅</div>
+								<div class="songlist__author">周杰伦</div>
+								<div class="songlist__time">04:00</div>
+							</li>
+							<li>
+								<div class="songlist__name">夜曲</div>
+								<div class="songlist__author">周杰伦</div>
+								<div class="songlist__time">03:46</div>
+							</li>
+							<!-- 列表内容 -->
+						</ul>
+						<!-- 弹出歌曲列表 -->
+					</div>
+					<!-- 歌曲列表 钮 -->
+				</li>
+				<!-- 登录注册页面 钮-->
+				<li class="ion-UserRegiest" ><a href="Register.html"  target="_blank"></a></li>
+				<!-- 喜欢 钮 -->
+				<li class="ion-likeList"><a href="#"></a></li>
+				<!-- 切换背景 钮 -->
+				<li class="ion-windows"><a href="#"></a></li>
+				<!-- 返回桌面 钮 -->
+				<li class="ion-home"><a target="_blank" href="index.html"></a></li>
+			</ul>
+			<!-- 右侧导航栏 -->
+		</div>
+	</body>
+</html>
