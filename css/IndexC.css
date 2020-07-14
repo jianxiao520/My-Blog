@@ -1,0 +1,521 @@
+*{margin: 0;padding: 0;}
+.home{/* background-color: #E6E6E6; */
+background-image: url(../img/loginBg.jpg);background-size: cover;}
+ul{list-style:none;}
+@font-face {
+	font-family: SemiBold;
+	src: url(../fonts/2.ttf) ;
+}
+@font-face {
+	font-family: Abril-Fatface;
+	src: url(../fonts/4.ttf) ;
+}
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?s9pq49');
+  src:  url('../fonts/icomoon.eot?s9pq49#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?s9pq49') format('truetype'),
+    url('../fonts/icomoon.woff?s9pq49') format('woff'),
+    url('../fonts/icomoon.svg?s9pq49#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.iconfont{
+    font-family: icomoon;
+	/* 字体图标 */
+}
+.menu .iconfont{
+	font-size: 24px;
+    display: inline-block;
+    margin-right: 10px;
+    position: absolute;
+    left: 15px;
+    top: 1px;
+	/* 菜单设计 */
+}
+.BackGround{
+	max-width: 80%;
+	background-color: white;
+	margin: 50px auto; /* 居中以及底部预留位置 */
+	padding: 0 70px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 20px 2px #B0B0B0;
+}
+hgroup{
+	position: relative;
+	/* 头部 父相 */
+}
+/* .WXcode{
+	position: absolute;
+	top: -22px;
+	width: 40%;
+	right: -16px;
+} */
+/* .WXcode img:hover{
+	transform: scale(1.05);
+	box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.2);
+}
+	 */
+.IMG i{
+	/* 小图标 */
+	display: block;
+	position:absolute;
+	top:0;
+	left: 0;
+	background-color: rgba(18,182,221,.8);
+	font-style: normal;
+	z-index:9;/* 保证图片缩放时候小图标可见 */
+	font-size:14px;
+	padding:3px 5px;
+}
+
+i a{
+	color: #FFFFFF;
+	text-decoration:none;
+}
+.Head{
+	/* 标题以及介绍文字 */
+	padding: 34px 0;
+	width: 100%;
+	margin: 0 auto;
+}
+/* 小火箭 */
+.rocket div{
+	left: 0;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	width: 149px;
+}
+.rocket .level-2 {
+	background: url(../img/rocket.png) no-repeat scroll -149px 0 transparent;
+	display: none;
+	height: 250px;
+	opacity: 0;
+	z-index: 1;
+}
+.rocket .level-3 {
+	background: none repeat scroll 0 0 transparent;
+	cursor: pointer;
+	display: block;
+	height: 150px;
+	z-index: 2;
+}
+.rocket {
+	background: url(../img/rocket.png) no-repeat scroll 0 0 transparent;
+	cursor: default;
+	display: block;
+	height: 250px;
+	margin: -125px 0 0;
+	overflow: hidden;
+	padding: 0;
+	position: fixed;
+    right: 10px;
+    top: 90%;
+	width: 149px;
+	z-index: 11;
+}
+/* 小火箭 */
+
+
+.tittle{
+	/* 设置大标题 */
+	color: #515151;
+	text-align: left;
+}
+.description{
+	/* 设置小介绍 */
+	color: #757575;
+	/* line-height: 2; */
+	margin-top: 10px;
+	font-size: 13px;
+	font-weight:normal;
+	font-family: SemiBold;
+}
+.Navigation{
+	/* 导航栏的整体设置 */
+	margin: 60px auto;
+	width: 100%;
+	text-align: left;
+	
+}
+.menu{
+	/* 上下横条 */
+	width: 100%;
+	border-top: 1px solid rgba(0,0,0,0.2);
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.menu li{
+	/* 导航栏设置距离以及横 */
+	margin-right: 30px;
+	display: inline-block;
+}
+
+.menu li a{
+ /* 导航栏选项的绘制 */
+
+    line-height: 46px;
+	color: #12414b;
+    display: block;
+    border-radius: 5px;
+    padding: 0 50px;
+	padding-right: 26px;
+    height: 45px;
+    text-transform: uppercase;
+    font-weight: 600;
+	text-decoration: none;
+    transition: all .1s linear;
+	position: relative;
+}
+.menu li a:hover{
+	/* 悬停文字阴影 */
+	background-color: #515151;
+    color: #fff;
+    box-shadow: 0 5px 10px 0 rgb(81, 81, 81,0.4);
+}
+
+.Note{
+	/* 笔记列右偏移 */
+	padding-left: 6px;
+	/* height: 70%; */
+	width: 100%;
+	position: relative;
+	padding-bottom:30px;
+}
+.Note ul li h3 a{
+	/* 笔记列标题的加工 */
+	font-size: 22px;
+	font-weight:normal;
+	text-decoration: none;
+	color:#2f96e5f7;
+	font-family: Abril-Fatface;
+}
+.IMG{
+	/* 封面 */
+    width: 30%;
+    height: 115px;
+    overflow: hidden;
+    top: 0;
+    position: absolute;
+}
+img{
+	/* 图片组件通用设置 */
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;  
+	transition: all 1s;
+	/* position: absolute; */
+}
+img:hover{
+	transform: scale(1.4);
+}
+.Ct{
+	margin-top: 35px;
+	width: 100%;
+	height: 80%;
+	position: relative;
+}
+.IMG img{
+	width: 100%;
+}
+.Note ul {
+	height: 100%;
+	width: 65%;
+}
+.Note ul li{
+	/* 笔记列项的整体大小位置 */
+	padding-left: 10px;
+	padding-top:10px;
+	width: 100%;
+	height: 220px;
+	border-top: 1px solid rgba(0,0,0,0.2);
+	transition: all .5s;
+}
+.Note ul li:hover{
+	/* 笔记列悬停过渡 */
+	transform: scale(1.01);
+	box-shadow: 1px 1px 30px 2px rgba(0,0,0,0.5);
+}
+.Content{
+	/* 内容的整体 */
+	width: 65%;
+    top: 0px;
+    right: 2%;
+    margin-left: 40px;
+    position: absolute;
+}
+.author-info{
+	/* 右边内容 */
+	width: 100%;
+	height: 33px;
+	position: relative;
+	
+}
+.author{
+	/* 作者以及头像 */
+	width: 124px;
+	height: 33px;
+	position: relative; 
+	
+}
+.author-img{
+	display: inline-block;
+	height: 33px;
+	width: 130px;
+}
+.author-img span{
+	position: absolute;
+	line-height: 28px;
+	left: 36px;
+	color: #888;
+}
+.touxiang{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	overflow: hidden;
+	display: inline-block;
+}
+.news-info{
+	/* 笔记简介设置 */
+	font-size: 14px;
+	margin-top: 10px;
+	font-family: SemiBold;
+	color: #888;
+}
+.time{
+	/* 时间位置 */
+	position: absolute;
+	line-height: 28px;
+	display: inline-block;
+	color: #888;
+}
+.time:before{
+	content:'\2601';
+	font-size: 18px;
+}
+.Type{
+	/* 类型设置 */
+	position: absolute;
+	line-height: 28px;
+	display: inline-block;
+	right: 20%;
+}
+.Type a{
+	color: #096;
+	text-decoration: none;
+}
+.G_Span{
+	margin: 0 35px;
+}
+
+.Myslef{
+	/* 右侧自我评价框 */
+	width: 30%;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	right: 5px;
+	border-left: 1px solid rgba(0,0,0,0.2);
+	border-right: 1px solid rgba(0,0,0,0.2);
+}
+footer{
+	/* 底部 */
+	width: 100%;
+	height: 150px;
+	background-color: #373D41;
+	color: #73777a;
+	padding:30px 0;
+	border-top:3px solid #00C1DE;
+}
+.container{
+	margin: 0 auto;
+	width: 70%;
+	height:130px;
+	position: relative;
+}
+.FooterCode{
+	width: 260px;
+	height: 130px;	
+}
+.FooterCode img{
+	border: 5px solid white;
+}
+.FooterCode div{
+	width:110px;
+	float:left;
+	text-align:center;	
+	margin:	0 10px;
+}
+.end{
+	left: 315px;
+	top: -1px;
+	position: absolute;
+	font-size: 14px;
+	line-height: 24px;
+}
+/* .end p{
+	font-size: 16px;
+	color: #00c1de;
+} */
+.end a{
+	color: #00C1DE;	
+	text-decoration: none;
+	margin-right: 10px;
+}
+
+@keyframes jello {
+	/* 头像摇晃动画 */
+    from, 11.1%, to {
+        transform: none;
+    }
+    22.2% {transform: skewX(-12.5deg) skewY(-12.5deg);}
+    33.3% {transform: skewX(6.25deg) skewY(6.25deg);}
+    44.4% {transform: skewX(-3.125deg) skewY(-3.125deg);}
+    55.5% {transform: skewX(1.5625deg) skewY(1.5625deg);}
+    66.6% {transform: skewX(-0.78125deg) skewY(-0.78125deg);}
+    77.7% {transform: skewX(0.390625deg) skewY(0.390625deg);}
+    88.8% {transform: skewX(-0.1953125deg) skewY(-0.1953125deg);}
+}
+.buy:hover .MyTx{
+	animation: jello 1s;
+}
+.buy:hover .Message{
+	opacity: 0;
+	/* 调整透明度同时调整盒子位置,以防被挡触摸不了小圆块 */
+	z-index: -1;
+}
+.buy:hover .buy-address:nth-child(2) {
+	transform: translate3d(0, -150%, 0);
+}
+.buy:hover .buy-address:nth-child(3) {
+	transform: translate3d(-130%, -75%, 0);
+}
+.buy:hover .buy-address:nth-child(4) {
+	transform: translate3d(130%, -75%, 0);
+}
+.buy:hover .buy-address:nth-child(5) {
+	transform: translate3d(0, 150%, 0);
+}
+.buy:hover .buy-address:nth-child(6) {
+	transform: translate3d(-130%, 75%, 0);
+}
+.buy:hover .buy-address:nth-child(7) {
+	transform: translate3d(130%, 75%, 0);
+}
+.Address{
+	color: gray;
+}
+.Message{
+	/* 个人信息 */
+	position: absolute;
+	left: 49%;
+	transform: translateX(-50%);
+	bottom: 23px;
+	opacity: 1;
+	transition: all .3s ease;
+}
+.buy-address{
+	/* 小圆球评价设计 */
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	box-sizing: border-box;
+	padding-top: 20px;
+	line-height: 1.25;
+	background-color: #E16132;
+	font-family: SemiBold;
+	color: white !important;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	transition: background-color .2s, transform .5s, color .2s;
+	border-radius: 50%;
+	color: transparent;
+	transform: translate3d(0, 0, 0);
+	text-decoration: none;
+}
+.buy-address:hover{
+	background-color: #cde14b;
+}
+.buy{
+	width: 100%;
+	height: 300px;
+	margin: -50px auto 0;
+	text-align: center;
+	position: relative;
+	top: 50px;
+	transform: translateZ(0);
+}
+.MyTx{
+	/* 自我评价->头像框 */
+	width: 100px;
+	height: 100px;
+	z-index: 1;
+	cursor: pointer;
+	border-radius: 50%;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.photo_album{
+	/* 3D旋转图片框 */
+    perspective: 1000px;
+    background: #eee;
+    width: 30%;
+    height: 300px;
+    position: absolute;
+    top: 340px;
+    right: 5px;
+    border-radius: 10px;
+	overflow: hidden;
+	/* box-shadow: 5px 4px 20px 0px rgba(0,0,0,0.6); */
+}
+.photo_album section{
+	width: 220px;
+	height: 165px;
+	margin: 70px auto;
+	position: relative;/* 定义定位父元素 */
+	transform-style: preserve-3d;/* 确定3d位置 */
+	animation: Ro 25s ease infinite;/* 动画 */
+	background-image: url(../img/MyImg2.jpg);/* 中间图片 */
+	background-size:cover;/* 缩放 */
+}
+.photo_album section div{
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all 1s;
+}
+.photo_album section div img{
+	height: 170px;
+}
+
+.photo_album:hover{
+	overflow: inherit;
+}
+@keyframes Ro{
+	0%{transform: rotateY(0);}
+	100%{transform: rotateY(360deg);}
+}
+.photo_album section div img:hover{
+	transform: scale(1.1);
+	box-shadow: 1px 1px 50px #FFFF00;
+}
+
+.photo_album section div:nth-child(1){transform: translateZ(300px);}
+.photo_album section div:nth-child(2){transform: rotateY(60deg) translateZ(300px);}
+.photo_album section div:nth-child(3){transform: rotateY(120deg) translateZ(300px);}
+.photo_album section div:nth-child(4){transform: rotateY(180deg) translateZ(300px);}
+.photo_album section div:nth-child(5){transform: rotateY(240deg) translateZ(300px);}
+.photo_album section div:nth-child(6){transform: rotateY(300deg) translateZ(300px);}

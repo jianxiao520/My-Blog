@@ -1,0 +1,657 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+/* 字体预设 */
+@font-face {
+	font-family: SemiBold;
+	src: url(../fonts/2.ttf);
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src: url('../fonts/icomoon.eot?s9pq49');
+	src: url('../fonts/icomoon.eot?s9pq49#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?s9pq49') format('truetype'),
+		url('../fonts/icomoon.woff?s9pq49') format('woff'),
+		url('../fonts/icomoon.svg?s9pq49#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+/* 标准字体 */
+* {
+	font-family: SemiBold;
+	text-decoration: none;
+}
+
+/* 旋转准备 */
+@keyframes Bd_Frames {
+
+	/* 头像旋转 */
+	0% {
+		transform: rotateY(0);
+	}
+
+	10% {
+		transform: rotateY(-180deg);
+	}
+
+	90% {
+		transform: rotateY(-180deg);
+	}
+
+	100% {
+		transform: rotateY(0deg);
+	}
+}
+
+@keyframes Zr_QingMing {
+
+	/* 签名上提 */
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 52px, 0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.Touxiang img {
+	/* 头像设置 */
+	width: 80px;
+	border-radius: 50%;
+	border: 3px solid white;
+	animation: Bd_Frames 10s ease infinite;
+	transform-style: preserve-3d;
+}
+
+/* 顶部小导航栏 */
+.menu {
+	float: right;
+}
+
+.menu li {
+	margin-right: 30px;
+	display: inline-block;
+}
+
+.Navigation {
+	position: absolute;
+	z-index: 9999;
+	right: 14px;
+	top: 10px;
+}
+
+/* .Navigation a{
+	color: #515151;
+	text-decoration: none;
+} */
+
+/* 小火箭 */
+.rocket div {
+	left: 0;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	width: 149px;
+}
+
+.rocket .level-2 {
+	background: url(../img/rocket.png) no-repeat scroll -149px 0 transparent;
+	display: none;
+	height: 250px;
+	opacity: 0;
+	z-index: 1;
+}
+
+.rocket .level-3 {
+	background: none repeat scroll 0 0 transparent;
+	cursor: pointer;
+	display: block;
+	height: 150px;
+	z-index: 2;
+}
+
+.rocket {
+	background: url(../img/rocket.png) no-repeat scroll 0 0 transparent;
+	cursor: default;
+	display: block;
+	height: 250px;
+	margin: -125px 0 0;
+	overflow: hidden;
+	padding: 0;
+	position: fixed;
+	right: 10px;
+	top: 90%;
+	width: 149px;
+	z-index: 11;
+}
+
+/* 小火箭 */
+
+.Navigation li {
+	/* 导航栏li样式 */
+	display: inline-block;
+	width: 130px;
+	height: 40px;
+	margin: 6px;
+	border: 2px solid #fff;
+	box-sizing: border-box;
+	transition: all .6s linear;
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+}
+
+.Navigation li:hover {
+	transform: scale(1.1);
+	/* color: #373D41; */
+	border: 2px solid #73777A;
+}
+
+.Navigation li::after {
+	content: '';
+	width: 0;
+	background-color: rgba(243, 215, 164, .8);
+	height: 46px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+	transition: all .6s cubic-bezier(0.39, 0.58, 0.57, 1);
+	;
+}
+
+.Navigation li:hover::after {
+	/* 填充效果 */
+	width: 100%;
+}
+
+.Navigation li a {
+	/* 菜单按钮文字效果样式 */
+	display: block;
+	line-height: 17px;
+	padding: 10px;
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
+	font-size: 15px;
+	transition: all .3s linear;
+	position: relative;
+	z-index: 1;
+}
+
+
+
+
+/* 介绍区域 */
+.headerIntroduce {
+	position: relative;
+	overflow: hidden;
+}
+
+.bg {
+	background-image: url(../img/bizi.jpg);
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 500px;
+	width: 100%;
+	/* 设置背景以及背景相关规则 */
+}
+
+.Ban_left,
+.Ban_right {
+	background: #fff;
+	width: 101%;
+	position: absolute;
+	bottom: -80px;
+	right: 48%;
+	height: 200px;
+	transform: rotate(6deg);
+	/* 制作两边翅膀作为页面区域过渡 */
+}
+
+.Ban_right {
+	left: 48%;
+	transform: rotate(-6deg);
+}
+
+.MyIntroduce {
+	position: relative;
+	width: 800px;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 15%;
+	text-align: center;
+	/* 头像以及个人签名区域 */
+}
+
+.QianMing {
+	width: 60%;
+	margin: auto;
+	font-size: 14px;
+	color: #fff;
+	padding: 20px 30px;
+	margin-top: 30px;
+	letter-spacing: 1px;
+	line-height: 30px;
+	background: rgba(0, 0, 0, .3);
+	/* 个人签名区域 */
+	animation: Zr_QingMing 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.social {
+	height: 32px;
+	margin-top: 30px;
+	margin-left: 5px;
+	list-style: none;
+	display: inline-block;
+	/* 相关跳转图标 */
+}
+
+.social img {
+	height: 25px;
+	width: 25px;
+	background: #fff;
+	border-radius: 50%;
+	border: 3px solid rgba(255, 255, 255, 0.4);
+	/* 跳转图标设置 */
+}
+
+.social ul li {
+	float: left;
+	margin-right: 10px;
+}
+
+.social ul li:hover {
+	opacity: 0.6;
+}
+
+/* 正文区域 */
+.Content {
+	max-width: 800px;
+	padding: 0 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.Today_CelebratedDictum {
+	padding: 20px;
+	color: #505050;
+	position: relative;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	background: #fbfbfb;
+	border-radius: 3px;
+	/* 名人名言框设置 */
+}
+
+.iconfont {
+	font-style: normal;
+	font-family: icomoon;
+	/* 设置图标字体 */
+}
+
+.Today_CelebratedDictum cite {
+	position: absolute;
+	right: 35px;
+	bottom: 10px;
+}
+
+._tittle {
+	color: #757575;
+	font-size: 18px;
+	font-weight: 400;
+	padding: 14px;
+	margin-bottom: 16px;
+	border-bottom: 3px dashed #ececec;
+	/* 栏目首文字设置 */
+}
+
+.Wallpaper,
+.Cinema {
+	/* height: 160px; */
+	position: relative;
+	padding-top: 25px;
+	/* padding-bottom: 50px; */
+	text-align: center;
+
+	/* 图片分享列表 */
+}
+
+.Wallpaper {
+	display: inline-block;
+}
+
+.Wallpaper li {
+	width: 32.9%;
+	float: left;
+	margin: 0 auto;
+	position: relative;
+	display: block;
+}
+
+.Wallpaper img,
+.Show,
+.down {
+	transition: all 1s;
+	/* 统一过渡 */
+}
+
+.Wallpaper img {
+	height: 160px;
+	width: 235px;
+	opacity: 0.8;
+	border-radius: 5px;
+	/* 分享的图片 初始外观设置 */
+}
+
+.Show {
+	left: 105px;
+	top: 70px;
+	opacity: 0;
+	position: absolute;
+	/* 按钮框架 */
+}
+
+.down {
+	font-size: 30px;
+	color: rgba(0, 0, 0, 0.6);
+	border-radius: 50%;
+	border: 2px solid;
+	padding: 10px;
+	font-family: icomoon;
+	/* 设置相关字体显示下载图标 */
+}
+
+.Wallpaper li:hover img {
+	filter: blur(3px);
+	opacity: 1;
+	/* 图片悬停->灰度+正常透明度 */
+}
+
+.Wallpaper li:hover .Show {
+	opacity: 1;
+	/* 图片悬停->下载按钮正常透明度 */
+}
+
+.down:hover {
+	color: red;
+	/* 下载按钮悬停 */
+}
+
+.LookMore {
+	top: -7px;
+	right: 26px;
+	text-decoration: none;
+	color: rgb(127, 127, 127);
+	position: absolute;
+}
+
+.feature {
+	position: absolute;
+
+}
+
+.Cinema img {
+	height: 100px;
+	width: 100px;
+	opacity: 0.8;
+	border-radius: 50%;
+	border: 2px solid #dadada;
+	padding: 2px;
+	/* 分享的图片 初始外观设置 */
+}
+
+.Movie_Title {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 25px;
+	margin: 0 0 0 17%;
+	position: relative;
+	z-index: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/* 超出用... */
+	width: 70%;
+	text-align: left;
+}
+
+.Movie_Title a {
+	font-weight: 600;
+	color: #737373;
+}
+
+.S_time {
+	/* 发布时间样式 */
+	top: 3px;
+	right: 24px;
+	color: #b3b3b3;
+	font-size: 13px;
+	position: absolute;
+}
+
+.CinemaLi {
+	position: relative;
+}
+
+.Cinema p {
+	/* 电影简介文字样式 */
+	font-size: 15px;
+	color: #6f6f6f;
+	letter-spacing: 0px;
+	text-align: left;
+	line-height: 22px;
+	margin-top: 11px;
+	margin-left: 135px;
+	/* font-weight: 100; */
+	font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+}
+
+.CinemaLi hr {
+	/* 电影项分割线 */
+	width: 30%;
+	height: 1px;
+	margin: 30px auto;
+	border: 0;
+	background: #efefef;
+}
+
+.info-meta {
+	/* 左飘的盒子默认样式 */
+	text-align: left;
+	margin-top: 10px;
+	font-family: din, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif !important;
+	position: absolute;
+	top: 20px;
+	opacity: 0;
+	padding-top: 8px;
+	border-top: 1px solid #ddd;
+	transform: translate3d(-30px, 0, 0);
+	transition: .7s all ease;
+	color: #b3b3b3;
+	font-size: 13px;
+}
+
+.CinemaLi:hover .info-meta {
+	opacity: 1;
+	transform: translate3d(-105px, 0, 0);
+}
+
+.songlist_item {
+	position: relative;
+	height: 86px;
+	overflow: hidden;
+	border-top: 1px solid #f2f2f2;
+	/* margin: -1px 1px 13px 0; */
+	margin: 10px;
+	padding-top: 12px;
+	font-size: 14px;
+	display: inline-block;
+	width: 47%;
+}
+
+.songlist__song a {
+	color: #000;
+}
+
+
+.songlist__author a {
+
+	color: #999;
+
+}
+
+.pagination {
+	padding: 20px 0;
+	text-align: center;
+	margin: 10% 0;
+}
+
+.pagination a {
+	/* 加载更多样式 */
+	padding: 13px 35px;
+	border: 1px solid #d6d6d6;
+	border-radius: 50px;
+	color: #adadad;
+	transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+}
+
+.pagination a:hover {
+	border: 1px solid #a0dad0;
+	color: #a0dad0;
+}
+
+.songlist_item_box {
+	/* 音乐播放按钮 */
+	position: relative;
+	float: left;
+	width: 86px;
+	height: 86px;
+	margin-right: 14px;
+	overflow: hidden;
+}
+
+.songlist__pic {
+	/* 音乐图片样式 */
+	display: block;
+	visibility: visible;
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: scale(1) translateZ(0);
+	transition: transform .75s;
+	object-fit: cover;
+}
+
+.songlist_zezao {
+	/* 灰蒙蒙一层 */
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-webkit-transition: opacity .5s;
+	transition: opacity .5s;
+}
+
+.songlist_item_box:hover .songlist_zezao {
+	opacity: .2;
+	filter: alpha(opacity=20);
+	transition: opacity .5s;
+}
+
+.songlist_item_box:hover .songlist_play {
+	opacity: 1;
+	transition: all .5s;
+	transform: scale(1) translateZ(0);
+}
+
+.songlist_play {
+	/* 播放的按钮 */
+	position: absolute;
+	left: 66%;
+	top: 69%;
+	margin: -34px;
+	width: 40px;
+	height: 39px;
+	line-height: 41px;
+	font-size: 32px;
+	text-align: right;
+	background-color: #F2F2F2;
+	color: rgb(84, 84, 84);
+	border-radius: 50%;
+	/* 按钮播放设置 */
+	transform: scale(.7) translateZ(0);
+	opacity: 0;
+	/* 过渡效果: 小->大&透明->不透明 */
+}
+
+.songlist_cont a:hover {
+	color: #31c27c !important;
+	/* text-decoration: none; */
+}
+
+.songlist__song {
+	/* 歌名样式 */
+	font-size: 14px;
+	padding: 21px 0 2px;
+	max-width: 50%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-weight: 400;
+}
+
+.songlist__author {
+	/* 歌手样式 */
+	max-width: 50%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #999;
+}
+
+.songlist__time {
+	/* 歌时长样式 */
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	line-height: 86px;
+}
+
+.site-footer {
+	text-align: center;
+	margin: 70px auto;
+	width: 70%;
+	border-top: 1px solid #e2e2e2;
+	padding: 20px;
+	height: 10px;
+	font-size: 13px;
+	color: #9c9c9c;
+}
+
+.Today_Wallpaper,
+.Today_Music,
+.Today_Cinema {
+	padding-top: 60px;
+}

@@ -1,0 +1,442 @@
+/* 基本样式 */
+* {
+	margin: 0 auto;
+	padding: 0;
+}
+
+body,
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	position: relative;
+}
+li {
+	list-style: none;
+}
+/* 图标字体定义 */
+@font-face {
+	font-family: 'icomoon';
+	src: url('../fonts/icomoon.eot?s9pq49');
+	src: url('../fonts/icomoon.eot?s9pq49#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?s9pq49') format('truetype'),
+		url('../fonts/icomoon.woff?s9pq49') format('woff'),
+		url('../fonts/icomoon.svg?s9pq49#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+/* 基本字体以及背景图 */
+html {
+	font-family: 'Noto Sans HK', sans-serif;
+	background: url(../img/bz3.jpg) no-repeat fixed; 
+	background-attachment: fixed;
+	background-size: 100% 150%;
+}
+
+.ShowMusic {
+	width: 100%;
+	height: 90%;
+}
+
+/* 圆盘 */
+@keyframes Xz {
+	0% {
+		transform: rotateZ(0deg);
+	}
+	100% {
+		transform: rotateZ(360deg);
+
+	}
+}
+
+.YuanPan {
+	/* 圆盘的整体样式 */
+	width: 450px;
+	height: 450px;
+	border-radius: 50%;
+	padding: 30px;
+	border: 12px solid rgba(239, 239, 239, 0.9);
+	background: url(../img/最长的电影.jpg) no-repeat;
+	position: absolute;
+	background-size: contain;
+	left: 10%;
+	top: 38%;
+	margin-top: -170px;
+	box-shadow: 8px 8px 20px #000000;
+	transform: rotateY(0deg);
+	animation: Xz 10s linear infinite;
+}
+
+.YuanPan center {
+	/* 原本中心音轨样式 */
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #000000;
+	border: 5px solid rgba(255, 255, 255, 0.9);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -50px;
+	margin-left: -50px;
+}
+
+.YuanPan center img {
+	margin: 20px auto;
+	border-radius: 50%;
+}
+
+.faded-text {
+	/* 歌词样式 */
+	width: 100%;
+	text-align: center;
+	font-size: 16px;
+	z-index: 5;
+	color: rgba(225, 225, 225, .8);
+	background-clip: text;
+	position: absolute;
+	left: -1%;
+	top: 100px;
+}
+
+.ShowMusic {
+	/* 上 盒子样式 */
+	position: relative;
+	width: 100%;
+	height: 80%;
+}
+
+.Zimu {
+	/* 右侧盒子样式 */
+	right: 0%;
+	position: relative;
+	width: 30%;
+	height: 100%;
+	/* top: 30%; */
+	left: 25%;
+}
+
+.faded-text p {
+	margin-bottom: 10px;
+}
+
+.Control {
+	/* 下方控制盒子 */
+	height: 20%;
+	position: relative;
+}
+
+.Control .Music_play {
+	left: 200px;
+	top: 55px;
+	width: 25px;
+	height: 29px;
+	background-position: 0 0;
+}
+
+.Control .Music_prev {
+	top: 60px;
+	left: 120px;
+	width: 19px;
+	height: 20px;
+	background-position: 0 -30px;
+}
+
+.Control .Music_next {
+	top: 60px;
+	left: 273px;
+	width: 19px;
+	height: 20px;
+	background-position: 0 -52px;
+}
+
+.Control .zujian {
+	position: absolute;
+	background-image: url(../img/player.png);
+	transform: scale(1.5);
+}
+
+.Control a:hover {
+	color: #fff;
+}
+
+.zezao {
+	/* 歌词的遮罩 */
+	position: relative;
+	height: 45%;
+	top: 55%;
+	left: 50%;
+	transform: translateX(-50%);
+	overflow: hidden;
+	-webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .6) 15%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, .6) 85%, rgba(255, 255, 255, 0) 100%);
+}
+
+.player_music {
+	/* 进度条区域 */
+	top: 50px;
+	left: 145px;
+	position: relative;
+	margin: 0 550px 0 200px;
+
+}
+
+.player_progress {
+	/* 进度条 */
+	padding-top: 10px;
+	height: 8px;
+	cursor: pointer;
+}
+
+.player_progress__inner {
+	/* 进度条 当前位置样式 */
+	position: relative;
+	height: 2px;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#19FFFFFF', endColorstr='#19FFFFFF');
+	background: rgba(255, 255, 255, .1);
+}
+
+.player_progress__load {
+	/* 进度条 样式 */
+	width: 100%;
+	height: 2px;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#33FFFFFF', endColorstr='#33FFFFFF');
+	background: rgba(255, 255, 255, .2);
+}
+
+.player_progress__play {
+	width: 0%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 2px;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#B2FFFFFF', endColorstr='#B2FFFFFF');
+	background: rgba(255, 255, 255, .7);
+}
+
+.player_progress__dot {
+	top: -4px;
+	right: -4px;
+	width: 10px;
+	height: 10px;
+	background-position: 0 -170px;
+	opacity: 1;
+	filter: none;
+}
+
+.player_music__info a {
+	text-decoration: none;
+}
+
+.player_music__info a,
+.player_music__time {
+	color: rgba(225, 225, 225, .8);
+}
+
+.player_music__time {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.song_info__info {
+	/* 右侧框内框样式 */
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 10%;
+	width: 100%;
+	height: 50%;
+	text-align: center;
+	font-size: 14px;
+	line-height: 24px;
+	color: rgba(225, 225, 225, .8);
+
+}
+
+.song_info__info a {
+	color: rgba(225, 225, 225, .8);
+	text-decoration: none;
+}
+
+.song_info__info a:hover {
+	color: rgba(225, 225, 225, 1);
+}
+
+.song_info__cover {
+	position: relative;
+	display: block;
+	width: 186px;
+	height: 186px;
+	margin: auto;
+}
+
+.song_info__cover::after {
+	/* 歌曲专辑样式 */
+	content: "";
+	position: absolute;
+	left: 9px;
+	top: 0;
+	width: 201px;
+	height: 180px;
+	background: url(../img/song_info__cover.png) 0 0 no-repeat;
+}
+
+.song_info__cover img {
+	width: 186px;
+	height: 186px;
+}
+
+.Control .Music_like {
+	top: 60px;
+	right: 330px;
+	width: 24px;
+	height: 21px;
+	background-position: 0 -96px;
+}
+
+.Control .Music_down {
+	top: 60px;
+	right: 269px;
+	width: 22px;
+	height: 21px;
+	background-position: 0 -120px;
+}
+
+.Control .Music_comment {
+	top: 60px;
+	right: 200px;
+	width: 24px;
+	height: 24px;
+	background-position: 0 -400px;
+}
+
+.Daohang {
+	/* 右侧导航栏 */
+	position: fixed;
+	height: 100%;
+	width: 70px;
+	background-color: #4e4949de;
+	top: 0;
+	right: 0;
+}
+
+
+
+.Daohang ul li a {
+	/* 右侧导航图标样式 */
+	text-decoration: none;
+	color: white;
+	height: 80px;
+	width: 100%;
+	font-size: 30px;
+	line-height: 80px;
+	text-align: center;
+	display: block;
+	transition: .3s all;
+	font-family: "icomoon";
+}
+
+.Daohang ul li a:hover {
+	background: #95a5a6;
+}
+
+.ion-songList a::before {
+	/* 歌曲列表 */
+	content: '\e9bb';
+}
+
+.ion-UserRegiest a::before {
+	/* 用户注册登录 */
+	content: '\e971';
+}
+
+.ion-likeList a::before {
+	/* 喜欢 */
+	content: '\e9da';
+}
+
+.ion-windows a::before {
+	/* 更换壁纸 */
+	content: '\eac2';
+}
+
+.ion-home a::before {
+	/* home */
+	content: '\e900';
+}
+
+.ion-songList:hover .songList {
+	/* display: block; */
+	right: 70px;
+	opacity: 1;
+	transition: .4s all ease;
+}
+
+.songList {
+	/* 飘出歌曲列表框样式 */
+	position: fixed;
+	top: 0px;
+	right: -302px;
+	height: 300px;
+	width: 300px;
+	background: rgba(0, 0, 0, 0.2);
+	/* display: none; */
+	opacity: 0;
+	color: #FFFFFF;
+	border: 1px solid;
+	border-radius: 10px;
+}
+
+.songList .horizontally_line {
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #fff;
+	opacity: .02;
+}
+
+.songList .vertical_line {
+	position: absolute;
+	height: 100%;
+	width: 1px;
+	background-color: #fff;
+	opacity: .2;
+	top: 0;
+}
+
+.songlist__header {
+	height: 30px;
+	line-height: 30px;
+}
+
+.songlist__name,
+.songlist__author,
+.songlist__time {
+	/* 整体设置 列头 */
+	float: left;
+	text-align: center;
+}
+
+.songlist__name {
+	width: 40%;
+}
+
+.songlist__author,.songlist__time {
+	width: 30%;
+}
+.songlist__list li{
+	height: 100%;
+	cursor: pointer;
+}
+
+.songlist__list li:hover{
+	background-color: rgba(0,0,0,0.4);
+}
+.songlist__list{
+	height: 30px;
+	line-height: 30px;
+}
